@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   // TODO: TEMP BASE
-  base: 'https://<user>.github.io'
+  base: '/ti-pagos_freelancing/'
 })
