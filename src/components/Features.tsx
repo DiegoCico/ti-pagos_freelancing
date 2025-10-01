@@ -11,25 +11,25 @@ const ITEMS: Feature[] = [
     title: "Crypto Payments Rail",
     color: "var(--accent)",
     body:
-      "On/Off-ramps, wallet orchestration, settlement workflows that plug into your stack.",
+      "Buy, sell, and settle digital assets with on/off-ramps, wallet orchestration, and instant FX — all integrated into your stack.",
   },
   {
     title: "Blockchain Data Pipelines",
     color: "var(--mint)",
     body:
-      "On-chain ETL, lakehouse modeling, and real-time analytics with durable SLAs.",
+      "On-chain ETL into your warehouse, real-time analytics, and SLAs for risk, compliance, and finance teams.",
   },
   {
     title: "Compliance & Security",
     color: "var(--brand)",
     body:
-      "KYC/KYT hooks, policy engines, HSM/KMS, audit trails and clean separation of duties.",
+      "KYC/AML/KYT modules, policy engines, hardware key custody, audit logs, and enterprise access controls.",
   },
   {
     title: "Exchanges & Custody",
     color: "var(--violet)",
     body:
-      "Order routing, hot/cold wallet logic, withdrawal queues, alerting & approvals.",
+      "Order routing, cold/hot wallet logic, withdrawal approvals, and automated alerts for operations teams.",
   },
 ];
 
@@ -38,13 +38,14 @@ export default function Features() {
     <section id="features" className="section" aria-label="Features">
       <div className="container">
         <h2 style={{ fontSize: 36, margin: "0 0 10px" }}>
-          Solutions that <span className="underline-cyan">ship to production</span>
+          Enterprise rails <span className="underline-cyan">ready to deploy</span>
         </h2>
         <p style={{ color: "var(--muted)", marginTop: 0, maxWidth: 760 }}>
-          We build the boring, critical infrastructure — secure by default and ready to scale.
+          Core infrastructure for banks and fintechs: payments, custody, compliance, and data —
+          secure by default, built to scale.
         </p>
 
-        {/* Desktop = grid; Phone = swipeable slider (handled purely by CSS in ap.css) */}
+        {/* Grid on desktop; swipeable slider on mobile (CSS handles) */}
         <div className="features-track" role="list">
           {ITEMS.map((it, i) => (
             <article key={i} className="card" role="listitem">

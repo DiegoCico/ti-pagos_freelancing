@@ -1,13 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-/**
- * SecureData
- * Full section:
- * - Badge + heading + intro
- * - Semicircle gauge with Low/Medium/High labels
- * - Copy column with bullets + chips
- */
 export default function SecureData() {
   const ref = useRef<HTMLElement | null>(null);
   const [on, setOn] = useState(false);
@@ -36,60 +29,65 @@ export default function SecureData() {
         </div>
 
         <h2 style={{ margin: "0 0 8px", fontSize: 36 }}>
-          Highest <span className="underline-sweep">security</span> at every level
+          Data security <span className="underline-sweep">you can trust</span>
         </h2>
 
         <p className="muted" style={{ maxWidth: 780 }}>
-          From low-risk workloads to mission-critical financial data, we give you full spectrum
-          protection. Anchored to blockchain, encrypted everywhere, and auditable by design.
+          We protect every transaction and card program with blockchain-anchored audit,
+          strong encryption, and enterprise controls designed for banks and fintechs.
         </p>
 
         <div className="secure-data-grid">
-          {/* Visual (gauge) */}
+          {/* Gauge visual */}
           <div className="card-lite">
             <DialSVG on={on} />
           </div>
 
-          {/* Copy column */}
+          {/* Copy */}
           <div className="secure-data-copy">
-            <h3 style={{ marginTop: 0 }}>Why it matters</h3>
-
+            <h3 style={{ marginTop: 0 }}>Layers of protection</h3>
             <ul className="security-list">
               <li>
                 <span className="dot low" />
                 <div>
-                  <div className="li-title">Defense in depth</div>
+                  <div className="li-title">Defense-in-depth</div>
                   <div className="li-body">
-                    Layered protection from network to application, mapped to risk levels.
+                    From network firewalls to app-level monitoring, every layer is hardened.
                   </div>
                 </div>
               </li>
               <li>
                 <span className="dot med" />
                 <div>
-                  <div className="li-title">Immutable records</div>
+                  <div className="li-title">Immutable audit</div>
                   <div className="li-body">
-                    Every write chained, timestamped, and verifiable on a blockchain ledger.
+                    Key events chained on blockchain for tamper-proof traceability.
                   </div>
                 </div>
               </li>
               <li>
                 <span className="dot high" />
                 <div>
-                  <div className="li-title">Built for critical workloads</div>
+                  <div className="li-title">Keys & approvals</div>
                   <div className="li-body">
-                    End-to-end encryption, fine-grained roles, and multi-region durability.
+                    HSM/MPC custody, dual approvals, and least-privilege access.
                   </div>
                 </div>
               </li>
             </ul>
 
-            <div className="security-tags">
-              <span className="chip">SOC 2</span>
-              <span className="chip">KMS/HSM</span>
-              <span className="chip">mTLS</span>
-              <span className="chip">Multi-region</span>
-              <span className="chip">WAF</span>
+            {/* Compact assurance row */}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, minmax(0,1fr))",
+                gap: 14,
+                marginTop: 16,
+              }}
+            >
+              <Mini title="Encryption" desc="AES-256 at rest, TLS 1.3 in transit" />
+              <Mini title="Compliance" desc="SOC 2 • PCI-DSS • KYC/AML" />
+              <Mini title="Access" desc="RBAC • Dual control • Audit logs" />
             </div>
           </div>
         </div>
@@ -98,6 +96,17 @@ export default function SecureData() {
   );
 }
 
+/* --- Small card row item --- */
+function Mini({ title, desc }: { title: string; desc: string }) {
+  return (
+    <div className="card" style={{ padding: 14 }}>
+      <div style={{ fontWeight: 700, fontSize: 14 }}>{title}</div>
+      <div style={{ color: "var(--muted)", fontSize: 12 }}>{desc}</div>
+    </div>
+  );
+}
+
+/* --- Dial --- */
 function DialSVG({ on }: { on: boolean }) {
   return (
     <svg
@@ -108,9 +117,9 @@ function DialSVG({ on }: { on: boolean }) {
     >
       <defs>
         <linearGradient id="dialGrad" x1="0" y1="1" x2="1" y2="0">
-          <stop offset="0%" stopColor="#f97316" />   {/* orange */}
-          <stop offset="50%" stopColor="var(--accent)" /> {/* cyan */}
-          <stop offset="100%" stopColor="#3b82f6" /> {/* blue */}
+          <stop offset="0%" stopColor="#f97316" />           {/* Low: orange */}
+          <stop offset="50%" stopColor="var(--accent)" />     {/* Medium: cyan */}
+          <stop offset="100%" stopColor="#3b82f6" />         {/* High: blue */}
         </linearGradient>
         <radialGradient id="shieldGlow" cx="50%" cy="50%" r="60%">
           <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.35" />
@@ -129,15 +138,9 @@ function DialSVG({ on }: { on: boolean }) {
       />
 
       {/* labels outside arc */}
-      <text x="120" y="140" className="rim-label low" textAnchor="middle">
-        Low
-      </text>
-      <text x="360" y="20" className="rim-label med" textAnchor="middle">
-        Medium
-      </text>
-      <text x="600" y="140" className="rim-label high" textAnchor="middle">
-        High
-      </text>
+      <text x="120" y="140" className="rim-label low" textAnchor="middle">Low</text>
+      <text x="360" y="20" className="rim-label med" textAnchor="middle">Medium</text>
+      <text x="600" y="140" className="rim-label high" textAnchor="middle">High</text>
 
       {/* center */}
       <g className="dial-center" transform="translate(360 220)">
@@ -148,12 +151,8 @@ function DialSVG({ on }: { on: boolean }) {
           stroke="white"
           strokeWidth="2"
         />
-        <text x="0" y="80" textAnchor="middle" className="dial-main-text">
-          Highest Security
-        </text>
-        <text x="0" y="110" textAnchor="middle" className="dial-sub-text">
-          with blockchain
-        </text>
+        <text x="0" y="80" textAnchor="middle" className="dial-main-text">Highest Security</text>
+        <text x="0" y="110" textAnchor="middle" className="dial-sub-text">anchored by blockchain</text>
       </g>
     </svg>
   );

@@ -3,6 +3,92 @@ h1 { margin: 0; }
 .section + .section { border-top: 1px solid rgba(255,255,255,.06); }
 .card:hover { transform: translateY(-2px); transition: transform .15s ease; }
 
+/* =========================
+   Navbar: logo + hamburger
+   ========================= */
+
+/* Make the header sticky with the same glass effect (optional if you already inline this) */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(8, 18, 29, 0.72);
+  backdrop-filter: saturate(160%) blur(10px);
+}
+
+/* ---- Logo sizing ----
+   Apply class="logo" to the element wrapping <Logo /> (recommended).
+   This keeps the SVG/img crisp without hard-coding width. */
+.logo svg,
+.logo img {
+  height: 30px;   /* bump as needed: 28–36px works well */
+  width: auto;
+}
+
+/* Fallback: if you didn't add .logo, this targets the first brand link in the header */
+header .container > a[aria-label="TIPagos home"] svg,
+header .container > a[aria-label="TIPagos home"] img {
+  height: 30px;
+  width: auto;
+}
+
+/* ---- Desktop/Mobile visibility helpers ---- */
+@media (max-width: 840px) {
+  .hide-mobile { display: none !important; }
+  .show-mobile { display: inline-flex !important; }
+}
+@media (min-width: 841px) {
+  .show-mobile { display: none !important; }
+}
+
+/* ---- Orange hamburger button ---- */
+.nav-hamburger {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 10px 8px;
+  border-radius: 12px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  transition: filter .15s ease, transform .15s ease;
+}
+.nav-hamburger:hover { filter: brightness(1.06); }
+.nav-hamburger:active { transform: translateY(1px); }
+.nav-hamburger:focus-visible { box-shadow: 0 0 0 2px rgba(251,146,60,.35); } /* #fb923c with alpha */
+
+/* Lines */
+.nav-hamburger .line {
+  width: 24px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: #fb923c; /* orange */
+  transform-origin: center;
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+/* Animate to "X" when menu is open:
+   Add the class "open" to each .line in your JSX when menu state is open */
+.nav-hamburger .line.open:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav-hamburger .line.open:nth-child(2) { opacity: 0; }
+.nav-hamburger .line.open:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ---- Mobile dropdown panel (optional polish) ---- */
+.mobile-panel {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  animation: slideDown .16s ease;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
 
 /* --- Animations --- */
 @keyframes fadeUp {

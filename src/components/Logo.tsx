@@ -1,22 +1,34 @@
-export default function Logo({ size = 30 }: { size?: number }) {
-  // Wide viewBox so underline never clips on either side
+export default function Logo({ size = 48 }: { size?: number }) {
+  // Larger defaults: scale both text and underline proportionally
   return (
-    <div style={{ display:'inline-flex', alignItems:'center' }}>
+    <div style={{ display: "inline-flex", alignItems: "center" }}>
       <svg
-        width={size*6.2} height={size*2.2}
-        viewBox="0 0 620 220" fill="none"
-        style={{ overflow: 'visible' }}
+        width={size * 8}     // much wider
+        height={size * 3}    // taller for breathing room
+        viewBox="0 0 800 300"
+        fill="none"
+        style={{ overflow: "visible" }}
         aria-label="TIPagos logo"
       >
-        <text x="0" y="120"
+        <text
+          x="0"
+          y="180"
           fill="#f2a33a"
           fontFamily="Inter, ui-sans-serif"
           fontWeight="900"
-          fontSize="120"
-          letterSpacing="-0.02em">
+          fontSize="500"        // bigger text
+          letterSpacing="-0.025em"
+        >
           TIPagos
         </text>
-        <rect x="6" y="145" width="410" height="12" rx="6" fill="#00e6e6"/>
+        <rect
+          x="8"
+          y="290"
+          width="1700"           // longer underline
+          height="40"
+          rx="8"
+          fill="#00e6e6"
+        />
       </svg>
     </div>
   );

@@ -12,23 +12,25 @@ export default function Hero() {
             className="badge"
             style={{ marginBottom: 14, borderColor: "var(--ring)", color: "var(--accent)" }}
           >
-            Blockchain • Crypto • FinTech Infrastructure
+            Banks • Crypto • Payments Infrastructure
           </div>
 
-          <h1 className="grad-text hero-title">Modern IT for the Financial Market</h1>
+          <h1 className="grad-text hero-title">
+            Crypto rails & cards for financial institutions
+          </h1>
 
           <p className="hero-lead" style={{ color: "var(--muted)", maxWidth: 640, marginTop: 12 }}>
-            TIPagos engineers secure, scalable rails for digital assets, payments, and market data.
-            Built for compliance, designed for speed.
+            TIPagos powers compliant buy/sell, custody, and branded debit/credit cards —
+            blockchain-anchored, encrypted end-to-end, and ready to scale.
           </p>
 
           <div className="hero-actions" style={{ display: "flex", gap: 14, marginTop: 22 }}>
-            <a href="#cta" className="btn">Launch a Pilot</a>
-            <a href="#features" className="btn btn--ghost">Explore Solutions</a>
+            <a href="#cta" className="btn">Book a Call</a>
+            <a href="#features" className="btn btn--ghost">See Solutions</a>
           </div>
 
           <div className="hero-sub" style={{ marginTop: 16, color: "var(--muted)" }}>
-            ISO-27001 aligned • Multi-region by default • SOC-friendly logging
+            ISO-27001 aligned • PCI-DSS scope ready • SOC-friendly audit logs
           </div>
         </div>
 
@@ -71,6 +73,7 @@ function HeaderTiles() {
               padding: "14px 18px",
               borderRight: "1px solid var(--border)",
             }}
+            aria-label={`${s} ticker`}
           >
             <span style={{ fontWeight: 800, color: "#d7e6ff" }}>{s}</span>
             <span>${(1000 + i * 14.23).toFixed(2)}</span>
@@ -80,7 +83,7 @@ function HeaderTiles() {
                 fontWeight: 700,
               }}
             >
-              {i % 2 ? "-0." + ((i % 9) + 8) : "+0." + ((i % 7) + 9)}%
+              {i % 2 ? `-${(0.8 + (i % 9) / 10).toFixed(1)}%` : `+${(0.9 + (i % 7) / 10).toFixed(1)}%`}
             </span>
           </div>
         ))}
