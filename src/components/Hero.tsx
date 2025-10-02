@@ -26,7 +26,7 @@ export default function Hero() {
 
           <div className="hero-actions" style={{ display: "flex", gap: 14, marginTop: 22 }}>
             <a href="https://calendly.com/anderson-tipagos/30min" target="_blank" className="btn">Book a Call</a>
-            <a href="mailto:hello@tipagos.com" className="btn btn--ghost">See Solutions</a>
+            <a href="mailto:hello@tipagos.com" className="btn btn--ghost">Email Us</a>
           </div>
 
           <div className="hero-sub" style={{ marginTop: 16, color: "var(--muted)" }}>
