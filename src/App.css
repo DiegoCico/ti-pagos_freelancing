@@ -7,7 +7,6 @@ h1 { margin: 0; }
    Navbar: logo + hamburger
    ========================= */
 
-/* Make the header sticky with the same glass effect (optional if you already inline this) */
 .site-header {
   position: sticky;
   top: 0;
@@ -16,12 +15,10 @@ h1 { margin: 0; }
   backdrop-filter: saturate(160%) blur(10px);
 }
 
-/* ---- Logo sizing ----
-   Apply class="logo" to the element wrapping <Logo /> (recommended).
-   This keeps the SVG/img crisp without hard-coding width. */
+/* ---- Logo sizing ---- */
 .logo svg,
 .logo img {
-  height: 30px;   /* bump as needed: 28–36px works well */
+  height: 30px;   
   width: auto;
 }
 
@@ -58,14 +55,14 @@ header .container > a[aria-label="TIPagos home"] img {
 }
 .nav-hamburger:hover { filter: brightness(1.06); }
 .nav-hamburger:active { transform: translateY(1px); }
-.nav-hamburger:focus-visible { box-shadow: 0 0 0 2px rgba(251,146,60,.35); } /* #fb923c with alpha */
+.nav-hamburger:focus-visible { box-shadow: 0 0 0 2px rgba(251,146,60,.35); } 
 
 /* Lines */
 .nav-hamburger .line {
   width: 24px;
   height: 2.5px;
   border-radius: 2px;
-  background: #fb923c; /* orange */
+  background: #fb923c; 
   transform-origin: center;
   transition: transform .18s ease, opacity .18s ease;
 }
@@ -76,7 +73,7 @@ header .container > a[aria-label="TIPagos home"] img {
 .nav-hamburger .line.open:nth-child(2) { opacity: 0; }
 .nav-hamburger .line.open:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-/* ---- Mobile dropdown panel (optional polish) ---- */
+/* ---- Mobile dropdown panel ---- */
 .mobile-panel {
   display: grid;
   gap: 10px;
@@ -149,7 +146,7 @@ header .container > a[aria-label="TIPagos home"] img {
     linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
 }
 
-/* --- Features responsive track (grid -> mobile slider) --- */
+/* --- Features responsive track --- */
 .features-track {
   margin-top: 28px;
   display: grid;
@@ -190,7 +187,7 @@ header .container > a[aria-label="TIPagos home"] img {
 .hero-lead { font-size: 18px; }
 .hero-sub { font-size: 14px; }
 
-/* marquee base (uses your existing @keyframes marquee) */
+/* marquee base */
 .marquee { overflow: hidden; }
 .marquee-track {
   display: flex;
@@ -222,7 +219,7 @@ header .container > a[aria-label="TIPagos home"] img {
   }
 
   .hero-stats {
-    grid-template-columns: 1fr !important; /* stack the 4 stats */
+    grid-template-columns: 1fr !important;
   }
 
   .marquee-tile {
