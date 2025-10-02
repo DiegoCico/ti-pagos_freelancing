@@ -22,10 +22,10 @@ export default function CTA() {
             marginTop: 20,
           }}
         >
-          <a href="#contact" className="btn">
+          <a href="https://calendly.com/anderson-tipagos/30min" target="_blank" className="btn">
             Book a Call
           </a>
-          <a href="mailto:hello@tipagos.io" className="btn btn--ghost">
+          <a href="mailto:hello@tipagos.com" className="btn btn--ghost">
             Email Us
           </a>
         </div>
