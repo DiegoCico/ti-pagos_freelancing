@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Ticker() {
   const cryptoData = [
     { symbol: 'BTC', price: '$97,420.00', change: '+0.9%', up: true },

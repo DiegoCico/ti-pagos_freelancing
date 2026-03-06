@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Insights() {
   return (
     <section className="section s-border" id="about">

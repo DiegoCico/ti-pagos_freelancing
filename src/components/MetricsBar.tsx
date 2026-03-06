@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function MetricsBar() {
   return (
     <div className="mbar-row">

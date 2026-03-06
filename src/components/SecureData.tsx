@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function SecureData() {
   return (
     <section className="section s-border s-tint" id="security">
