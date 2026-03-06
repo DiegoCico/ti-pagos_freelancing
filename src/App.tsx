@@ -1,18 +1,17 @@
 import { useEffect } from 'react';
-import './index.css';
 import './App.css';
-
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+import { initializeAnimations } from './utils/animations';
+import Nav from './components/Nav';
 import Ticker from './components/Ticker';
-import MetricsBar from './components/MetricsBar';
-import Features from './components/Features';
-import SecureData from './components/SecureData';
-import Insights from './components/Insights';
+import Hero from './components/Hero';
+import Metrics from './components/Metrics';
+import Solutions from './components/Solutions';
+import ProductLines from './components/ProductLines';
+import Security from './components/Security';
+import Outcomes from './components/Outcomes';
 import CryptoCards from './components/CryptoCards';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
-import { initializeAnimations } from './utils/animations';
 
 function App() {
   useEffect(() => {
@@ -22,17 +21,16 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <main>
-        <Hero />
-        <Ticker />
-        <MetricsBar />
-        <Features />
-        <SecureData />
-        <Insights />
-        <CryptoCards />
-        <CTA />
-      </main>
+      <Nav />
+      <Ticker />
+      <Hero />
+      <Metrics />
+      <Solutions />
+      <ProductLines />
+      <Security />
+      <Outcomes />
+      <CryptoCards />
+      <CTA />
       <Footer />
     </>
   );
