@@ -57,7 +57,7 @@ nav {
   text-decoration: none;
 }
 .nav-logo img {
-  height: 40px;
+  height: 50px;
   object-fit: contain;
 }
 
@@ -552,7 +552,7 @@ footer {
 
 @media(max-width:640px) {
   nav { padding: 0 12px; }
-  .nav-logo img { height: 28px; }
+  .nav-logo img { height: 45px; }
   .btn-nav-ghost, .btn-nav-fill { padding: 5px 12px; font-size: 10px; }
   
   .hero-main { padding: 40px 12px 32px; }
