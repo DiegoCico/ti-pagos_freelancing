@@ -9,7 +9,7 @@ function ProductLines() {
       <div className="product-grid">
         <div className="product-card r">
           <div className="product-header">
-            <img src="/TIpagosBANK-v1.png" alt="TIPagos Bank" className="product-logo" />
+            <img src="/ti-pagos_freelancing/TIpagosBANK-v1.png" alt="TIPagos Bank" className="product-logo" />
           </div>
           <div className="product-body">
             <h3 className="product-title">Banking Infrastructure</h3>
@@ -57,7 +57,7 @@ function ProductLines() {
 
         <div className="product-card r">
           <div className="product-header">
-            <img src="/TIpagosCRYPTO-v1.png" alt="TIPagos Crypto" className="product-logo" />
+            <img src="/ti-pagos_freelancing/TIpagosCRYPTO-v1.png" alt="TIPagos Crypto" className="product-logo" />
           </div>
           <div className="product-body">
             <h3 className="product-title">Crypto-Native Platform</h3>

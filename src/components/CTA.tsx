@@ -13,7 +13,7 @@ function CTA() {
         </div>
       </div>
       <div className="cta-right">
-        <a href="#" className="btn-cta-white">Book a Call</a>
+        <a href="https://calendly.com/anderson-tipagos/30min" className="btn-cta-white" target="_blank">Book a Call</a>
         <a href="mailto:hello@tipagos.com" className="btn-cta-outline">Email Us</a>
       </div>
     </section>

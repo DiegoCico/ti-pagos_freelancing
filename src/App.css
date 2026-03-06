@@ -73,7 +73,11 @@ nav {
   margin-bottom: -2px;
   transition: border-color 0.15s;
 }
-.nav-links a:hover { border-bottom-color: #000; }
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  border-bottom-color: #000;
+  color: #000;
+}
 .nav-right { display: flex; gap: 10px; align-items: center; }
 .btn-nav-ghost {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
@@ -263,7 +267,7 @@ h1.hero-h1 {
   background: #fafafa;
 }
 .product-logo {
-  height: 48px;
+  height: 64px;
   object-fit: contain;
 }
 .product-body {
@@ -452,7 +456,7 @@ h1.hero-h1 {
 .cta-left {}
 .cta-eyebrow { font-family:'IBM Plex Mono',monospace; font-size:10px; color:#555; letter-spacing:3px; text-transform:uppercase; margin-bottom:16px; }
 .cta h2 { font-family:'IBM Plex Sans Condensed',sans-serif; font-size:clamp(28px,4vw,52px); font-weight:700; line-height:1.0; letter-spacing:-0.5px; margin-bottom:14px; }
-.cta h2 em { font-style:italic; color:#7aaadf; }
+.cta h2 em { font-style:italic; color:#0046AF; }
 .cta p { font-size:15px; color:#777; max-width:480px; line-height:1.7; }
 .cta-right { display:flex; flex-direction:column; gap:12px; align-items:flex-start; flex-shrink:0; }
 .btn-cta-white { font-family:'IBM Plex Sans Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#000; background:#fff; border:none; padding:14px 36px; cursor:pointer; text-decoration:none; display:inline-block; white-space:nowrap; transition:background 0.15s; }
@@ -581,7 +585,7 @@ footer {
   .cf-d { font-size: 12px; }
   
   .product-header { padding: 32px 24px 24px; }
-  .product-logo { height: 40px; }
+  .product-logo { height: 52px; }
   .product-body { padding: 24px; }
   .product-title { font-size: 20px; }
   .product-desc { font-size: 13px; }

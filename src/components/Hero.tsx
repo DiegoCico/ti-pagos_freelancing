@@ -7,8 +7,8 @@ function Hero() {
           <h1 className="hero-h1">Crypto rails &amp; cards<br />for financial<br />institutions</h1>
           <p className="hero-sub">TIPagos powers compliant buy/sell, custody, and branded debit/credit cards — blockchain-anchored, encrypted end-to-end, and ready to scale globally.</p>
           <div className="hero-actions">
-            <a href="#contact" className="btn-primary">Book a Call</a>
-            <a href="mailto:hello@tipagos.com" className="btn-secondary">Email Us</a>
+            <a href="https://calendly.com/anderson-tipagos/30min" className="btn-primary" target="_blank">Book a Call</a>
+            <a href="mailto:hello@tipagos.com" className="btn-secondary" target="_blank">Email Us</a>
           </div>
         </div>
         <p className="hero-cert">ISO-27001 aligned &nbsp;·&nbsp; PCI-DSS scope ready &nbsp;·&nbsp; SOC-friendly audit logs</p>

@@ -2,7 +2,7 @@ function Nav() {
   return (
     <nav>
       <a href="#" className="nav-logo">
-        <img src="/logo.png" alt="TIPagos" />
+        <img src="/ti-pagos_freelancing/logo.png" alt="TIPagos" />
       </a>
       <ul className="nav-links">
         <li><a href="#solutions">Solutions</a></li>

@@ -3,7 +3,7 @@ function Footer() {
     <footer>
       <div className="footer-top">
         <div className="footer-col">
-          <img src="/logo.png" alt="TIPagos" className="footer-logo" />
+          <img src="/ti-pagos_freelancing/logo.png" alt="TIPagos" className="footer-logo" />
           <p className="footer-tagline">Crypto infrastructure for financial institutions worldwide. US-headquartered, globally deployed.</p>
         </div>
         <div className="footer-col">
