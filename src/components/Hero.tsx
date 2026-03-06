@@ -1,126 +1,36 @@
-"use client";
+import React from 'react';
 
 export default function Hero() {
   return (
-    <section className="section" style={{ position: "relative", overflow: "hidden" }}>
-      <div className="hero-bg" />
-
-      <div className="container hero-grid">
-        {/* Left copy */}
+    <section className="hero">
+      <div className="hero-inner">
         <div>
-          <div
-            className="badge"
-            style={{ marginBottom: 14, borderColor: "var(--ring)", color: "var(--accent)" }}
-          >
-            Banks • Crypto • Payments Infrastructure
+          <div className="hero-eyebrow">Banks · Crypto · Payments Infrastructure</div>
+          <h1 className="hero-h1">Crypto rails &amp; cards<br />for <em>financial institutions</em></h1>
+          <p className="hero-sub">TIPagos powers compliant buy/sell, custody, and branded debit/credit cards — blockchain-anchored, encrypted end-to-end, and ready to scale globally.</p>
+          <div className="hero-actions">
+            <a href="https://calendly.com/anderson-tipagos/30min" className="btn-primary" target="_blank" rel="noopener noreferrer">Book a Call</a>
+            <a href="mailto:hello@tipagos.com" className="btn-secondary">Email Us</a>
           </div>
-
-          <h1 className="grad-text hero-title">
-            Crypto rails & cards for financial institutions
-          </h1>
-
-          <p className="hero-lead" style={{ color: "var(--muted)", maxWidth: 640, marginTop: 12 }}>
-            TIPagos powers compliant buy/sell, custody, and branded debit/credit cards —
-            blockchain-anchored, encrypted end-to-end, and ready to scale.
-          </p>
-
-          <div className="hero-actions" style={{ display: "flex", gap: 14, marginTop: 22 }}>
-            <a href="https://calendly.com/anderson-tipagos/30min" target="_blank" className="btn">Book a Call</a>
-            <a href="mailto:hello@tipagos.com" className="btn btn--ghost">Email Us</a>
-          </div>
-
-          <div className="hero-sub" style={{ marginTop: 16, color: "var(--muted)" }}>
-            ISO-27001 aligned • PCI-DSS scope ready • SOC-friendly audit logs
-          </div>
+          <p className="hero-cert">ISO-27001 aligned &nbsp;·&nbsp; PCI-DSS scope ready &nbsp;·&nbsp; SOC-friendly audit logs</p>
         </div>
-
-        {/* Right visual */}
-        <div className="tilt card hero-card">
-          <HeaderTiles />
-          <div style={{ padding: 18 }}>
-            <div className="hero-stats" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-              <MiniStat label="Throughput" value="18,900 TPS" tone="mint" />
-              <MiniStat label="Latency (p95)" value="32 ms" tone="accent" />
-              <MiniStat label="Uptime (90d)" value="99.98%" tone="brand" />
-              <MiniStat label="Cost / Tx" value="$0.0007" tone="violet" />
+        <div className="hero-card">
+          <div className="hc-head">
+            <div className="hc-logo">
+              <img src="/ti-pagos_freelancing/logo.png" alt="TIPagos" style={{ height: '18px', marginRight: '8px' }} />
+              — Live
             </div>
+            <div className="hc-status">Operational</div>
           </div>
+          <div className="hcm"><span className="hcm-l">Throughput</span><span className="hcm-v">18,900 TPS</span></div>
+          <div className="hcm"><span className="hcm-l">Latency (p95)</span><span className="hcm-v">32 ms</span></div>
+          <div className="hcm"><span className="hcm-l">Uptime (90d)</span><span className="hcm-v up">99.98%</span></div>
+          <div className="hcm"><span className="hcm-l">Cost / Tx</span><span className="hcm-v">$0.0007</span></div>
+          <div className="hcm"><span className="hcm-l">KYC/AML pass rate</span><span className="hcm-v up">97.6%</span></div>
+          <div className="hcm"><span className="hcm-l">Settlements today</span><span className="hcm-v">14,287</span></div>
+          <div className="hcm"><span className="hcm-l">Compliance</span><span className="hcm-v dim">SOC 2 · PCI-DSS · KYT</span></div>
         </div>
       </div>
     </section>
-  );
-}
-
-function HeaderTiles() {
-  const items = ["BTC", "ETH", "SOL", "USDC", "MATIC", "LINK", "AVAX", "DOT"];
-  return (
-    <div
-      className="marquee"
-      style={{
-        borderBottom: "1px solid var(--border)",
-        background: "linear-gradient(90deg, rgba(0,230,230,.08), rgba(23,212,155,.08))",
-      }}
-    >
-      <div className="marquee-track">
-        {[...items, ...items].map((s, i) => (
-          <div
-            key={i}
-            className="marquee-tile"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "80px 100px 80px",
-              gap: 10,
-              padding: "14px 18px",
-              borderRight: "1px solid var(--border)",
-            }}
-            aria-label={`${s} ticker`}
-          >
-            <span style={{ fontWeight: 800, color: "#d7e6ff" }}>{s}</span>
-            <span>${(1000 + i * 14.23).toFixed(2)}</span>
-            <span
-              style={{
-                color: i % 2 ? "#ff6b6b" : "#20d67b",
-                fontWeight: 700,
-              }}
-            >
-              {i % 2 ? `-${(0.8 + (i % 9) / 10).toFixed(1)}%` : `+${(0.9 + (i % 7) / 10).toFixed(1)}%`}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function MiniStat({
-  label,
-  value,
-  tone,
-}: {
-  label: string;
-  value: string;
-  tone: "mint" | "accent" | "brand" | "violet";
-}) {
-  const color =
-    {
-      mint: "var(--mint)",
-      accent: "var(--accent)",
-      brand: "var(--brand)",
-      violet: "var(--violet)",
-    }[tone] || "var(--accent)";
-
-  return (
-    <div className="card" style={{ padding: 14, borderColor: "var(--border)" }}>
-      <div style={{ fontSize: 12, color: "var(--muted)" }}>{label}</div>
-      <div style={{ fontSize: 22, fontWeight: 800, lineHeight: 1.1 }}>{value}</div>
-      <div
-        style={{
-          height: 6,
-          marginTop: 10,
-          borderRadius: 6,
-          background: `linear-gradient(90deg, ${color}, transparent)`,
-        }}
-      />
-    </div>
   );
 }

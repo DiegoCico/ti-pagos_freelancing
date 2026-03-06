@@ -1,63 +1,52 @@
-"use client";
-
-import { useState } from "react";
-import Logo from "./Logo";
+import React, { useState } from 'react';
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  const toggle = () => setOpen((v) => !v);
-  const close = () => setOpen(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
-    <header className="site-header">
-      <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: 76 }}>
-        {/* Brand */}
-          <a
-    href="#top"
-    aria-label="TIPagos home"
-    className="logo"
-    onClick={close}
-    style={{ marginTop: 30 }} // push logo lower
-  >
-          <Logo />
-        </a>
+    <nav>
+      <a href="#" className="logo">
+        <img src="/ti-pagos_freelancing/logo.png" alt="TIPagos" style={{ height: '40px' }} />
+      </a>
+      
+      {/* Desktop Navigation */}
+      <ul className="nav-links desktop-nav">
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <a href="#contact" className="nav-cta desktop-nav">Get Started</a>
 
-        {/* Desktop nav */}
-        <nav className="hide-mobile" style={{ display: "flex", gap: 22, alignItems: "center" }}>
-          <a href="#features" className="badge">Solutions</a>
-          <a href="#secure-data" className="badge">Security</a>
-          <a href="#about" className="badge">About</a>
-          <a href="#cta" className="btn">Get Started</a>
-        </nav>
+      {/* Mobile Hamburger */}
+      <button 
+        className="mobile-menu-btn"
+        onClick={toggleMenu}
+        aria-label="Toggle menu"
+      >
+        <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+        <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+        <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+      </button>
 
-        {/* Mobile hamburger */}
-        <button
-          type="button"
-          className="show-mobile nav-hamburger"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          onClick={toggle}
-        >
-          <span className={`line ${open ? "open" : ""}`} />
-          <span className={`line ${open ? "open" : ""}`} />
-          <span className={`line ${open ? "open" : ""}`} />
-        </button>
-      </div>
-
-      {/* Mobile dropdown */}
-      {open && (
-        <div className="container show-mobile" id="mobile-menu" style={{ paddingBottom: 16 }}>
-          <div className="card mobile-panel">
-            <a href="#features" onClick={close}>Solutions</a>
-            <a href="#secure-data" onClick={close}>Security</a>
-            <a href="#about" onClick={close}>About</a>
-            <a href="#cta" className="btn" style={{ justifyContent: "center" }} onClick={close}>
-              Get Started
-            </a>
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="mobile-menu">
+          <div className="mobile-menu-content">
+            <a href="#solutions" onClick={closeMenu}>Solutions</a>
+            <a href="#security" onClick={closeMenu}>Security</a>
+            <a href="#about" onClick={closeMenu}>About</a>
+            <a href="#contact" onClick={closeMenu}>Get Started</a>
           </div>
         </div>
       )}
-    </header>
+    </nav>
   );
 }
